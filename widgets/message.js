@@ -1,7 +1,6 @@
 'use strict'
 
 module.exports = (data, props) => {
-    console.log(props)
     if (props.my) {
         return {
             type: "flex",
@@ -25,7 +24,7 @@ module.exports = (data, props) => {
                         maxWidth: 500,
                     },
                     decoration: {
-                        color: 0xFFBBDEFB,
+                        color: 0x70CBF2,
                         borderRadius: {
                             bottomLeft: { x: 10, y: 10 },
                             bottomRight: { x: 10, y: 10 },
@@ -103,7 +102,7 @@ module.exports = (data, props) => {
                         maxWidth: 500,
                     },
                     decoration: {
-                        color: 0xFFce33ff,
+                        color: 0x57C0B3,
                         borderRadius: {
                             bottomLeft: { x: 10, y: 10 },
                             bottomRight: { x: 10, y: 10 },
