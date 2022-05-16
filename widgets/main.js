@@ -4,34 +4,25 @@ module.exports = (data, props) => {
   return {
     type: "flex",
     direction: "vertical",
+    fillParent: true,
     children: [
       {
-        type: "image",
-        src: "logo-vertical.png"
-      },
-      {
-        type: "text",
-        value: "This is the Hello World base app using the data system."
-      },
-      {
         type: "widget",
-        name: "userData",
-        query: {
-          "$find": {
-            "_datastore": "_users",
-            "_id": "@me"
+        name: "header",
+      },
+      {
+        type: "flexible",
+        child: {
+          type: "widget",
+          name: "redirect",
+          query: {
+            "$find": {
+              "_datastore": "_users",
+              "_id": "@me"
+            }
           }
         }
       },
-      {
-        type: "widget",
-        name: "counters",
-        query: {
-          "$find": {
-            "_datastore": "Counter"
-          }
-        }
-      }
     ]
   }
 }
