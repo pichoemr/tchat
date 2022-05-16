@@ -8,9 +8,9 @@ module.exports = {
         );
     },
     put(api, salon) {
-        return axios.put(`${api.url}/app/datastores/Salon/data/${counter._id}`, salon, { headers: { Authorization: `Bearer ${api.token}` } });
+        return axios.put(`${api.url}/app/datastores/Salon/data/${salon._id}`, salon, { headers: { Authorization: `Bearer ${api.token}` } });
     },
-    new(api, name, message) {
+    new(api, name) {
         return axios.post(`${api.url}/app/datastores/Salon/data`, { "name": name }, { headers: { Authorization: `Bearer ${api.token}` } });
     },
     delete(api, salonId) {

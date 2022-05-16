@@ -8,8 +8,6 @@ module.exports = async (props, event, api) => {
     console.log(event)
     switch (props.action) {
         case 'pseudo_changed':
-            console.log("pseudo");
-            console.log(user_data.data.data[0]);
             return user_data_service.put(api, user_data.data.data[0]._id, {
                 pseudo: event.value,
                 register: false,

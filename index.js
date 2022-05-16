@@ -9,7 +9,8 @@ module.exports = async () => {
       header: require('./widgets/header'),
       redirect: require('./widgets/redirect'),
       register: require('./widgets/register'),
-
+      salon: require('./widgets/salon'),
+      message: require('./widgets/message')
     },
     listeners: {
       onEnvStart: require('./listeners/onEnvStart'),

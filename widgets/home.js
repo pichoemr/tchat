@@ -11,26 +11,15 @@ module.exports = (data, props) => {
                 value: `Logged as ${data[0].pseudo}`
             },
             {
-                type: "flexible",
-                child:
-                {
-                    type: "flex",
-                    direction: "vertical",
-                    scroll: true,
-                    children: Array(50).fill().map((x, i) => (
-                        {
-                            type: "flex",
-                            direction: "horizontal",
-                            fillParent: true,
-                            children: [
-                                {
-                                    type: "text",
-                                    value: `var ${i}`
-                                }
-                            ]
-                        }
-
-                    ))
+                type: "widget",
+                name: "salon",
+                props: {
+                    pseudo: data[0].pseudo
+                },
+                query: {
+                    "$find": {
+                        "_datastore": "Messages",
+                    }
                 }
             },
             {
@@ -50,7 +39,10 @@ module.exports = (data, props) => {
                             value: "",
                             maxLength: 150,
                             onChanged: {
-                                action: "register"
+                                action: "send_message",
+                                props: {
+                                    action: "temp_message"
+                                }
                             },
                         }
                     },
@@ -60,8 +52,8 @@ module.exports = (data, props) => {
                         onPressed: {
                             action: "send_message",
                             props: {
-                                text: "test",
-                                pseudo: "test"
+                                action: "send_message",
+                                salon: "main"
                             }
                         }
                     }
