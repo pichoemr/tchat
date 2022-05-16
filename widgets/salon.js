@@ -1,7 +1,6 @@
 'use strict'
 
 module.exports = (data, props) => {
-    console.log(data)
     return {
         type: "flexible",
         child:
