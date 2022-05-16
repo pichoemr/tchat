@@ -1,6 +1,7 @@
 'use strict'
 
 module.exports = (data, props) => {
+    console.log(data)
     return {
         type: "flexible",
         child:
@@ -8,7 +9,7 @@ module.exports = (data, props) => {
             type: "flex",
             direction: "vertical",
             scroll: true,
-            children: data.sort((a, b) => (a._id > b._id)).map((message) => (
+            children: data.sort((a, b) => (a._id - b._id)).map((message) => (
                 {
                     type: "widget",
                     name: "message",
