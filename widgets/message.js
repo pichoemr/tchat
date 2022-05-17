@@ -61,7 +61,7 @@ module.exports = (data, props) => {
                     },
                     child: {
                         type: "text",
-                        value: props.pseudo
+                        value: (props.pseudo != undefined) ? props.pseudo : "anonyme"
                     }
                 }
 
@@ -83,7 +83,7 @@ module.exports = (data, props) => {
                     },
                     child: {
                         type: "text",
-                        value: props.pseudo
+                        value: (props.pseudo != undefined) ? props.pseudo : "anonyme"
                     }
                 },
                 {
