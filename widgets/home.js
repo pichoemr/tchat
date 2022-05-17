@@ -7,8 +7,14 @@ module.exports = (data, props) => {
         fillParent: true,
         children: [
             {
-                type: "text",
-                value: `Logged as ${data[0].pseudo}`
+                type: "widget",
+                name: "menu",
+                query: {
+                    "$find": {
+                        "_datastore": "_users",
+                        "_id": "@me"
+                    }
+                }
             },
             {
                 type: "widget",
@@ -19,6 +25,7 @@ module.exports = (data, props) => {
                 query: {
                     "$find": {
                         "_datastore": "Messages",
+                        "_refs": { "$contains": 1 }
                     }
                 }
             },
@@ -37,7 +44,7 @@ module.exports = (data, props) => {
                         child: {
                             type: "textfield",
                             value: data[0].temp_message,
-                            maxLength: 150,
+                            maxLength: 200,
                             onChanged: {
                                 action: "send_message",
                                 props: {

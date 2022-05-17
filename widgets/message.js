@@ -1,6 +1,7 @@
 'use strict'
 
 module.exports = (data, props) => {
+    console.log(props)
     if (props.my) {
         return {
             type: "flex",
@@ -11,7 +12,22 @@ module.exports = (data, props) => {
                 {
                     type: "flex",
                     direction: "vertical",
+                    crossAxisAlignment: "end",
+                    padding: {
+                        right: 2
+                    },
                     children: [
+                        {
+                            type: "container",
+                            padding: {
+                                top: 1,
+                                bottom: 0.5,
+                            },
+                            child: {
+                                type: "text",
+                                value: (props.pseudo != undefined) ? props.pseudo : "anonyme"
+                            }
+                        },
                         {
                             type: "container",
                             child: {
@@ -22,7 +38,7 @@ module.exports = (data, props) => {
                                 top: 1,
                                 bottom: 1,
                                 left: 1,
-                                right: 1
+                                right: 1,
                             },
                             constraints: {
                                 maxWidth: 500,
@@ -54,19 +70,6 @@ module.exports = (data, props) => {
                                     width: 1
                                 },
                             },
-                        },
-                        {
-                            type: "container",
-                            padding: {
-                                top: 1,
-                                bottom: 1,
-                                left: 2,
-                                right: 2
-                            },
-                            child: {
-                                type: "text",
-                                value: (props.pseudo != undefined) ? props.pseudo : "anonyme"
-                            }
                         }
                     ]
                 }
@@ -81,14 +84,15 @@ module.exports = (data, props) => {
                 {
                     type: "flex",
                     direction: "vertical",
+                    padding: {
+                        left: 2
+                    },
                     children: [
                         {
                             type: "container",
                             padding: {
                                 top: 1,
-                                bottom: 1,
-                                left: 2,
-                                right: 2
+                                bottom: 0.5
                             },
                             child: {
                                 type: "text",
