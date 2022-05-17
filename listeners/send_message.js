@@ -10,13 +10,15 @@ module.exports = async (props, event, api) => {
 
     switch (props.action) {
         case "send_message":
-            let salon = await salonService.query(api, props.salon)
-            let res = await message_service.new(api, user_data.data.data[0].temp_message, user_data.data.data[0].pseudo, [salon.data.data[0]._id], [])
-            return res
+            let salon = await salonService.query(api, props.salon);
+            let res = await message_service.new(api, user_data.temp_message, user_data.pseudo, [salon.data[0]._id], []);
+            return user_data_service.put(api, user_data._id, {
+                ...user_data,
+                temp_message: "",
+            });
         case "temp_message":
-            return user_data_service.put(api, user_data.data.data[0]._id, {
-                pseudo: user_data.data.data[0].pseudo,
-                register: user_data.data.data[0].register,
+            return user_data_service.put(api, user_data._id, {
+                ...user_data,
                 temp_message: event.value
             });
     }

@@ -36,7 +36,7 @@ module.exports = (data, props) => {
                         fit: "tight",
                         child: {
                             type: "textfield",
-                            value: "",
+                            value: data[0].temp_message,
                             maxLength: 150,
                             onChanged: {
                                 action: "send_message",

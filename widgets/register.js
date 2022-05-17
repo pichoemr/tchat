@@ -25,7 +25,8 @@ module.exports = (data, props) => {
                         bottomRight: { x: 10, y: 10 },
                         topLeft: { x: 10, y: 10 },
                         topRight: { x: 10, y: 10 },
-                    }
+                    },
+                    errorText: data.error_message
                 },
                 border: {
                     bottom: {
@@ -46,10 +47,9 @@ module.exports = (data, props) => {
                     },
                 },
                 child: {
-                    type: "wrap",
+                    type: "flex",
                     direction: "vertical",
-                    alignment: "center",
-                    runAlignment: "center",
+                    mainAxisAlignment: "center",
                     spacing: 1.5,
                     children: [
                         {
@@ -78,6 +78,7 @@ module.exports = (data, props) => {
                                         //     type: "outline",
                                         // },
                                         labelText: "My pseudo",
+                                        errorText: data.error_message
                                     },
                                 }
                             },
