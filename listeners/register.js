@@ -12,10 +12,15 @@ module.exports = async (props, event, api) => {
                 register: false,
             });
         case "validate":
-            return user_data_service.put(api, user_data.data.data[0]._id, {
-                pseudo: user_data.data.data[0].pseudo,
-                register: true,
-            });
+            if (user_data.data.data[0].pseudo.length > 0) {
+                return user_data_service.put(api, user_data.data.data[0]._id, {
+                    pseudo: user_data.data.data[0].pseudo,
+                    register: true,
+                });
+            } else {
+                user_data_service.add_error(api, user_data.data.data[0]._id, "pseudo cannot be blank !")
+            }
+
     }
 
 

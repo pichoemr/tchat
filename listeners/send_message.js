@@ -11,7 +11,6 @@ module.exports = async (props, event, api) => {
     switch (props.action) {
         case "send_message":
             let salon = await salonService.query(api, props.salon)
-            console.log(salon.data.data[0])
             let res = await message_service.new(api, user_data.data.data[0].temp_message, user_data.data.data[0].pseudo, [salon.data.data[0]._id], [])
             return res
         case "temp_message":

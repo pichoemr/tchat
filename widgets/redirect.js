@@ -16,6 +16,12 @@ module.exports = (data, props) => {
         return {
             type: "widget",
             name: "register",
+            query: {
+                "$find": {
+                    "_datastore": "_users",
+                    "_id": "@me"
+                }
+            }
         }
     }
 }

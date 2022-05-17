@@ -13,5 +13,5 @@ module.exports = {
     },
     put(api, user_data_id, data) {
         return axios.put(`${api.url}/app/datastores/_users/data/${user_data_id}`, data, { headers: { Authorization: `Bearer ${api.token}` } });;
-    },
+    }
 }

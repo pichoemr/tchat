@@ -12,7 +12,7 @@ module.exports = (data, props) => {
                     type: "container",
                     child: {
                         type: "text",
-                        value: props.text
+                        value: (props.text != undefined) ? props.text : ""
                     },
                     padding: {
                         top: 1,
@@ -24,7 +24,7 @@ module.exports = (data, props) => {
                         maxWidth: 500,
                     },
                     decoration: {
-                        color: 0x70CBF2,
+                        color: 0xFF70CBF2,
                         borderRadius: {
                             bottomLeft: { x: 10, y: 10 },
                             bottomRight: { x: 10, y: 10 },
@@ -90,7 +90,7 @@ module.exports = (data, props) => {
                     type: "container",
                     child: {
                         type: "text",
-                        value: props.text
+                        value: (props.text != undefined) ? props.text : ""
                     },
                     padding: {
                         top: 1,
@@ -102,7 +102,7 @@ module.exports = (data, props) => {
                         maxWidth: 500,
                     },
                     decoration: {
-                        color: 0x57C0B3,
+                        color: 0xFF57C0B3,
                         borderRadius: {
                             bottomLeft: { x: 10, y: 10 },
                             bottomRight: { x: 10, y: 10 },

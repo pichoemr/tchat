@@ -44,6 +44,13 @@ module.exports = (data, props) => {
                                     action: "temp_message"
                                 }
                             },
+                            onSubmitted: {
+                                action: "send_message",
+                                props: {
+                                    action: "send_message",
+                                    salon: "main"
+                                }
+                            }
                         }
                     },
                     {
